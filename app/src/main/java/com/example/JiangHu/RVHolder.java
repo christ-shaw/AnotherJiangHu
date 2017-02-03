@@ -1,4 +1,4 @@
-package com.example.materialtest;
+package com.example.JiangHu;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

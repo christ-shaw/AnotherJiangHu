@@ -1,4 +1,4 @@
-package com.example.materialtest.fragment;
+package com.example.JiangHu.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,12 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.materialtest.BannerModel;
-import com.example.materialtest.MyTaskAdapter;
-import com.example.materialtest.R;
-import com.example.materialtest.TaskItem;
-import com.example.materialtest.grid.MyGridAdapter;
-import com.example.materialtest.grid.MyGridView;
+import com.example.JiangHu.BannerModel;
+import com.example.JiangHu.MyTaskAdapter;
+import com.example.JiangHu.R;
+import com.example.JiangHu.TaskItem;
+import com.example.JiangHu.grid.MyGridAdapter;
+import com.example.JiangHu.grid.MyGridView;
 import com.sivin.Banner;
 import com.sivin.BannerAdapter;
 

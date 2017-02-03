@@ -1,4 +1,4 @@
-package com.example.materialtest.fragment;
+package com.example.JiangHu.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.materialtest.R;
+import com.example.JiangHu.R;
 
 /**
  * Created by zhibinxiao on 2017/2/2.

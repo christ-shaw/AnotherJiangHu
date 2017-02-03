@@ -1,4 +1,4 @@
-package com.example.materialtest.fragment;
+package com.example.JiangHu.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.materialtest.MyTaskAdapter;
-import com.example.materialtest.R;
-import com.example.materialtest.TaskItem;
+import com.example.JiangHu.MyTaskAdapter;
+import com.example.JiangHu.R;
+import com.example.JiangHu.TaskItem;
 
 import java.util.ArrayList;
 import java.util.List;

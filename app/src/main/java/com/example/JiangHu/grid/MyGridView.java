@@ -1,4 +1,4 @@
-package com.example.materialtest.grid;
+package com.example.JiangHu.grid;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.GridView;

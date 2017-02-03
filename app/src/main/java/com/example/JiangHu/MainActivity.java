@@ -1,4 +1,4 @@
-package com.example.materialtest;
+package com.example.JiangHu;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,8 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.materialtest.fragment.HomeFragment;
-import com.example.materialtest.fragment.TaskListTabFrament;
+import com.example.JiangHu.fragment.HomeFragment;
+import com.example.JiangHu.fragment.TaskListTabFrament;
 
 public class MainActivity extends AppCompatActivity {
 
