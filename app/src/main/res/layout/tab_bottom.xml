@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+   <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="4dip"
+        tools:ignore="UselessParent" >
+
+        <RadioButton
+            android:id="@+id/radio_home"
+            style="@style/main_tab_bottom"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/bt_menu_home_select"
+            android:text="@string/home" />
+
+
+       <RadioButton
+           android:id="@+id/radio_discover"
+           style="@style/main_tab_bottom"
+           android:drawablePadding="4dp"
+           android:drawableTop="@drawable/bt_menu_discover_select"
+           android:text="@string/discover" />
+
+       <RadioButton
+           android:id="@+id/radio_publish"
+           style="@style/main_tab_bottom"
+           android:drawablePadding="4dp"
+           android:drawableTop="@drawable/bt_menu_publish_select"
+           android:text="@string/publish" />
+
+       <RadioButton
+           android:id="@+id/radio_info"
+           style="@style/main_tab_bottom"
+           android:drawablePadding="4dp"
+           android:drawableTop="@drawable/bt_menu_info_select"
+           android:text="@string/info" />
+
+       <RadioButton
+           android:id="@+id/radio_me"
+           style="@style/main_tab_bottom"
+           android:drawablePadding="4dp"
+           android:checked="true"
+           android:drawableTop="@drawable/bt_menu_me_select"
+           android:text="@string/me" />
+
+   </RadioGroup>
+
+</LinearLayout>
