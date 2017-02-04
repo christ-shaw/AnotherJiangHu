@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="universities">
+        <item>深圳大学</item>
+        <item>深圳职业技术学院</item>
+        <item>深圳信息技术学院</item>
+        <item>南方科技大学</item>
+    </string-array>
+
+    <string-array name="taskType">
+        <item>救急</item>
+        <item>跑腿</item>
+        <item>兼职</item>
+        <item>培训</item>
+    </string-array>
+
+</resources>

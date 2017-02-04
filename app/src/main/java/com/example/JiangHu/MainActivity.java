@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.JiangHu.fragment.HomeFragment;
+import com.example.JiangHu.fragment.TaskCommitFragment;
 import com.example.JiangHu.fragment.TaskListTabFrament;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 1:
                     fragment = new TaskListTabFrament();
+                    break;
+                case 2:
+                    fragment = new TaskCommitFragment();
                     break;
 
                 default:
