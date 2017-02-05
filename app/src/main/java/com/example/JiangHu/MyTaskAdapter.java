@@ -26,7 +26,7 @@ public class MyTaskAdapter extends AutoRVAdapter {
 
         TaskItem item=(TaskItem) list.get(position);
         holder.getTextView(R.id.titleTextView).setText(item.getTitle());
-        holder.getTextView(R.id.dateTextView).setText(item.getDate());
+        holder.getTextView(R.id.dateTextView).setText(item.getBeginDate());
 
         String status = item.getStatus();
         if (status.equals("1")){
@@ -40,7 +40,7 @@ public class MyTaskAdapter extends AutoRVAdapter {
         holder.getTextView(R.id.info).setText(item.getContent());
 
 
-        holder.getTextView(R.id.orderPrice).setText(item.getPrice());
+        holder.getTextView(R.id.orderPrice).setText(item.getPayment());
 
         holder.getImageView(R.id.titleImageView).setImageDrawable(context.getResources().getDrawable(R.mipmap.index_img));
 //

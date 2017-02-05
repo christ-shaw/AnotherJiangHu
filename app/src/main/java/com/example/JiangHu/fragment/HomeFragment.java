@@ -132,9 +132,9 @@ public class HomeFragment extends Fragment
         TaskItem orderListItem1 = new TaskItem();
         orderListItem1.setTitle(title);
         orderListItem1.setContent(info);
-        orderListItem1.setPrice(price+"元");
+        orderListItem1.setPayment(price+"元");
         orderListItem1.setStatus("2");
-        orderListItem1.setDate("2015-10-26 10:33");
+        orderListItem1.setBeginDate("2015-10-26 10:33");
         return orderListItem1;
     }
 

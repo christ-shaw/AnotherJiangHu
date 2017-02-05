@@ -65,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="详细地址"
+                android:id="@+id/edit_location"
                 app:met_floatingLabel="highlight" />
         </LinearLayout>
 
@@ -132,11 +133,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="标题"
+                android:id="@+id/edit_headline"
                 app:met_floatingLabel="highlight" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/edit_desc"
                 android:hint="描述"
                 app:met_floatingLabel="highlight" />
 
@@ -152,15 +155,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:hint="开始时间"
-                    app:met_floatingLabel="highlight" />
+                    app:met_floatingLabel="highlight"
+                    app:met_textColor="@color/black"/>
 
                 <Button
+                    android:id="@+id/btn_begin"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:background="@drawable/shape"
                     android:elevation="5dp"
                     android:gravity="center"
                     android:text="选择"
+                    android:layout_margin="5dp"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -178,15 +184,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:hint="结束时间"
-                    app:met_floatingLabel="highlight" />
+                    app:met_floatingLabel="highlight"
+                    app:met_textColor="@color/black"/>
 
                 <Button
+                    android:id="@+id/btn_end"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:background="@drawable/shape"
                     android:elevation="5dp"
                     android:text="选择"
+                    android:layout_margin="5dp"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -195,6 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="赏金"
+                android:id="@+id/edit_payment"
                 app:met_floatingLabel="highlight" />
 
         </LinearLayout>
@@ -218,6 +228,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="联系人"
+                android:id="@+id/edit_contactor"
                 app:met_floatingLabel="highlight" />
 
 
@@ -225,6 +236,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="电话"
+                android:id="@+id/edit_phone"
                 app:met_floatingLabel="highlight" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -254,7 +266,7 @@
                 android:textSize="15dp" />
 
             <Button
-                android:id="@+id/btn_Cacel"
+                android:id="@+id/btn_Cancel"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"

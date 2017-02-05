@@ -3,7 +3,8 @@ package com.example.JiangHu;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -20,12 +21,14 @@ import com.example.JiangHu.fragment.HomeFragment;
 import com.example.JiangHu.fragment.TaskCommitFragment;
 import com.example.JiangHu.fragment.TaskListTabFrament;
 
+import static com.example.JiangHu.Constant.TAGS;
+
 public class MainActivity extends AppCompatActivity {
 
+
+
     private DrawerLayout mDrawerLayout;
-
-
-    private RadioGroup mHomeRadioGroup;
+    public RadioGroup mHomeRadioGroup;
     private RadioButton mHomeHomeRb;
     private RadioButton mHomeDiscoverRb;
     private RadioButton mHomePublishRb;
@@ -35,39 +38,39 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout mHomeContent;
 
     //用adapter来管理三个Fragment界面的变化。注意，我这里用的Fragment都是v4包里面的
-    FragmentStatePagerAdapter fragments = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
+  //  FragmentStatePagerAdapter fragments = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
-        @Override
-        public int getCount() {
-            return 4;//一共有四个Fragment
-        }
+      //  @Override
+  //      public int getCount() {
+      //      return 4;//一共有四个Fragment
+     //   }
 
-        //进行Fragment的初始化
-        @Override
-        public Fragment getItem(int i) {
-            Fragment fragment = null;
-
-            switch (i) {
-                case 0://首页
-                    fragment = new HomeFragment();
-                    break;
-                case 1:
-                    fragment = new TaskListTabFrament();
-                    break;
-                case 2:
-                    fragment = new TaskCommitFragment();
-                    break;
-
-                default:
-                    new HomeFragment();
-                    break;
-            }
-            if (fragment == null) {
-                fragment = new HomeFragment();
-            }
-            return fragment;
-        }
-    };
+//        //进行Fragment的初始化
+//        @Override
+//        public Fragment getItem(int i) {
+//            Fragment fragment = null;
+//
+//            switch (i) {
+//                case 0://首页
+//                    fragment = new HomeFragment();
+//                    break;
+//                case 1:
+//                    fragment = new TaskListTabFrament();
+//                    break;
+//                case 2:
+//                    fragment = new TaskCommitFragment();
+//                    break;
+//
+//                default:
+//                    new HomeFragment();
+//                    break;
+//            }
+//            if (fragment == null) {
+//                fragment = new HomeFragment();
+//            }
+//            return fragment;
+//        }
+    //};
 
 
     @Override
@@ -100,33 +103,82 @@ public class MainActivity extends AppCompatActivity {
         mHomeRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int index = 0;
+
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                Fragment fragment1 = fm.findFragmentByTag(TAGS[0]);
+                Fragment fragment2 = fm.findFragmentByTag(TAGS[1]);
+                Fragment fragment3 = fm.findFragmentByTag(TAGS[2]);
+                Fragment fragment4 = fm.findFragmentByTag(TAGS[3]);
+                Fragment fragment5 = fm.findFragmentByTag(TAGS[4]);
+                if (fragment1 != null) {
+                    ft.hide(fragment1);
+                }
+                if (fragment2 != null) {
+                    ft.hide(fragment2);
+                }
+                if (fragment3 != null) {
+                    ft.hide(fragment3);
+                }
+                if (fragment4 != null) {
+                    ft.hide(fragment4);
+                }
+                if (fragment5 != null) {
+                    ft.hide(fragment5);
+                }
                 switch (checkedId) {
                     case R.id.radio_home:
-                        index = 0;
+                        if (fragment1 == null) {
+                            fragment1 = new HomeFragment();
+                            ft.add(R.id.content_frame, fragment1, TAGS[0]);
+                        } else {
+                            ft.show(fragment1);
+                        }
                         break;
                     case R.id.radio_discover:
-                        index = 1;
+                        if (fragment2 == null) {
+                            fragment2 = new TaskListTabFrament();
+                            ft.add(R.id.content_frame, fragment2, TAGS[1]);
+                        } else {
+                            ft.show(fragment2);
+                        }
                         break;
                     case R.id.radio_publish:
-                        index = 2;
+                        if (fragment3 == null) {
+                            fragment3 = new TaskCommitFragment();
+                            ft.add(R.id.content_frame, fragment3, TAGS[2]);
+                        } else {
+                            ft.show(fragment3);
+                        }
                         break;
                     case R.id.radio_info:
-                        index = 3;
+                        if (fragment4 == null) {
+                            fragment4 = new HomeFragment();
+                            ft.add(R.id.content_frame, fragment4, TAGS[3]);
+                        } else {
+                            ft.show(fragment4);
+                        }
                         break;
+
                     case R.id.radio_me:
-                        index = 4;
+                        if (fragment4 == null) {
+                            fragment4 = new HomeFragment();
+                            ft.add(R.id.content_frame, fragment4, TAGS[4]);
+                        } else {
+                            ft.show(fragment4);
+                        }
+                    default:
                         break;
                 }
-                //通过fragments这个adapter还有index来替换帧布局中的内容
-                Fragment fragment = (Fragment) fragments.instantiateItem(mHomeContent, index);
-                //一开始将帧布局中 的内容设置为第一个
-                fragments.setPrimaryItem(mHomeContent, 0, fragment);
-                fragments.finishUpdate(mHomeContent);
+                ft.commit();
             }
         });
+        if (savedInstanceState == null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment fragment = new HomeFragment();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment, TAGS[0]).commit();
 
-
+        }
     }
 
     private void setUpToolBar() {
@@ -167,11 +219,27 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+//
+//    protected void onStart() {
+//        super.onStart();
+//        mHomeRadioGroup.check(R.id.radio_home);
+//    }
 
-    protected void onStart() {
-        super.onStart();
-        mHomeRadioGroup.check(R.id.radio_home);
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        for (int i = 0; i < mHomeRadioGroup.getChildCount(); i++) {
+            RadioButton mTab = (RadioButton) mHomeRadioGroup.getChildAt(i);
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentByTag((String) mTab.getTag());
+            FragmentTransaction ft = fm.beginTransaction();
+            if (fragment != null) {
+                if (!mTab.isChecked()) {
+                    ft.hide(fragment);
+                }
+            }
+            ft.commit();
+        }
     }
-
 
 }

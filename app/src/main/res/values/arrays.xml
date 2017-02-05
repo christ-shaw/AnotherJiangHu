@@ -14,4 +14,9 @@
         <item>培训</item>
     </string-array>
 
+    <string-array name="accessbility">
+        <item>本校</item>
+        <item>全市</item>
+    </string-array>
+
 </resources>
